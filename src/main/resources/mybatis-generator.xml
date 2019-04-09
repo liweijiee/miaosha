@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<!-- this files was used to generate java bean & mapper interface & sql xml automatically -->
+<generatorConfiguration>
+    <!-- the path of the db driver -->
+    <!--classPathEntry location="F:\文档\32.中移项目\0.maven.m2\repository\mysql\mysql-connector-java\5.1.40\mysql-connector-java-5.1.40.jar"/-->
+
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <!--
+        <property name="autoDelimitKeywords" value="true"/>
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+        <property name="javaFileEncoding" value="UTF-8"/>
+
+        <commentGenerator>
+            <property name="suppressAllComments" value="false"/>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator> -->
+
+        <!-- remember to change the database connection -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/miaosha"
+                        userId="root"
+                        password="123"/>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!-- remember to change the target project folder for 'java bean' -->
+        <javaModelGenerator targetPackage="com.miaoshaproject.dataobject"
+                            targetProject="src\main\java">
+            <property name="enableSubPackages" value="ture"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!-- remember to change the target project folder for 'mapper interface' -->
+        <sqlMapGenerator targetPackage="mapping"
+                         targetProject="src\main\resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <!-- remember to change the target project folder for 'sql xml' -->
+        <javaClientGenerator targetPackage="com.miaoshaproject.dao"
+                             targetProject="src\main\java"
+                             type="XMLMAPPER">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!--
+        <table tableName="user_info" domainObjectName="UserDO"
+               enableCountByExample="false" enableDeleteByExample="false"
+               enableUpdateByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false"/>
+        <table tableName="user_password" domainObjectName="UserPasswordDO"
+               enableCountByExample="false" enableDeleteByExample="false"
+               enableUpdateByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false"/>
+
+        <table tableName="item" domainObjectName="ItemDO"
+               enableCountByExample="false" enableDeleteByExample="false"
+               enableUpdateByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false"/>
+        <table tableName="item_stock" domainObjectName="ItemStockDO"
+               enableCountByExample="false" enableDeleteByExample="false"
+               enableUpdateByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false"/>
+
+        <table tableName="order_info" domainObjectName="OrderDO"
+               enableCountByExample="false" enableDeleteByExample="false"
+               enableUpdateByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false"/>
+
+        <table tableName="sequence_info" domainObjectName="SequenceDO"
+               enableCountByExample="false" enableDeleteByExample="false"
+               enableUpdateByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false"/>
+        -->
+        <table tableName="promo" domainObjectName="PromoDO"
+               enableCountByExample="false" enableDeleteByExample="false"
+               enableUpdateByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false"/>
+
+    </context>
+</generatorConfiguration>
